@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="brave">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deployment vercel</title>
+</head>
+<body>
+   <div id="year">!</div>
+</body>
+<script>
+    // Appel à l'API pour récupérer l'année
+    fetch('https://deployment-side-project.vercel.app/year')
+    .then(response => response.json())
+    .then(data => {
+        // Récupération de l'année depuis les données renvoyées par l'API
+        const year = data.year;
+        // Affichage de l'année à l'intérieur de l'élément HTML avec l'id "year"
+        document.querySelector('#year').innerHTML = year;
+    })
+    .catch(error => console.error(error));
+</script>
+</html>
